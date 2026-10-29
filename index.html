@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>گالری تی‌تی | پخش لوازم لوکس و دکوری منزل</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="hero.css" />
+    <style>
+      :root {
+        --x-cream: #fbf7f0;
+        --x-cream-2: #f3ebdd;
+        --x-gold: #b8913f;
+        --x-gold-d: #8a6a26;
+        --x-gold-l: #e6d3a3;
+        --x-ink: #24211f;
+        --x-ink-2: #6b625a;
+        --x-line: #e8dcc6;
+        --x-font: "Vazirmatn", var(--sans);
+      }
+      body { background: var(--x-cream); color: var(--x-ink); font-family: var(--x-font); }
+      .page.x-shop { max-width: none; padding: 0; gap: 0; display: block; font-family: var(--x-font); color: var(--x-ink); }
+      .x-shop * { font-family: var(--x-font); }
+      .x-wrap { max-width: 1180px; margin: 0 auto; padding-inline: 16px; }
+      .x-gold { color: var(--x-gold); }
+
+      /* header */
+      .x-header { position: sticky; top: 0; z-index: 50; background: rgba(251, 247, 240, 0.94); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid var(--x-line); }
+      .x-header__row { display: flex; align-items: center; gap: 10px; min-height: 60px; }
+      .x-logo { display: flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 800; font-size: 21px; letter-spacing: -0.2px; white-space: nowrap; }
+      .x-logo svg { width: 18px; height: 18px; fill: var(--x-gold); }
+      .x-logo small { display: block; font-size: 11px; font-weight: 500; color: var(--x-ink-2); margin-top: -2px; }
+      .x-iconbtn { width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--x-line); background: #fff; display: grid; place-items: center; cursor: pointer; position: relative; color: var(--x-ink); flex: none; }
+      .x-iconbtn svg { width: 21px; height: 21px; stroke: currentColor; fill: none; stroke-width: 1.7; }
+      .x-count { position: absolute; top: -6px; left: -6px; min-width: 20px; height: 20px; border-radius: 10px; background: var(--x-gold); color: #fff; font-size: 12px; font-weight: 700; display: grid; place-items: center; padding: 0 5px; transition: transform 0.2s; }
+      .x-count.is-bump { transform: scale(1.35); }
+      .x-search { flex: 1; display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--x-line); border-radius: 12px; height: 44px; padding-inline: 12px; }
+      .x-search svg { width: 18px; height: 18px; stroke: var(--x-ink-2); fill: none; stroke-width: 1.8; flex: none; }
+      .x-search input { border: 0; outline: 0; background: none; flex: 1; min-width: 0; font-size: 14px; color: var(--x-ink); }
+      .x-search--top { display: none; }
+      .x-search--mob { margin-bottom: 10px; }
+      .x-spacer { flex: 1; }
+      .x-menu { display: none; border-top: 1px solid var(--x-line); }
+      .x-menu.is-open { display: block; }
+      .x-menu a { display: block; padding: 13px 16px; text-decoration: none; border-bottom: 1px solid var(--x-line); font-weight: 500; }
+      @media (min-width: 820px) {
+        .x-search--top { display: flex; max-width: 460px; }
+        .x-search--mob { display: none; }
+        .x-spacer { display: none; }
+        .x-header__row { gap: 18px; min-height: 72px; }
+      }
+
+      /* hero */
+      .x-hero { position: relative; margin: 12px 16px 0; border-radius: 22px; overflow: hidden; min-height: 460px; display: flex; align-items: flex-end; color: #fff; }
+      .x-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .x-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20, 16, 12, 0.88) 10%, rgba(20, 16, 12, 0.35) 55%, rgba(20, 16, 12, 0.1)); }
+      .x-hero__copy { position: relative; z-index: 1; padding: 26px 22px; max-width: 620px; }
+      .x-hero__tag { display: inline-block; font-size: 12px; font-weight: 500; color: var(--x-gold-l); border: 1px solid rgba(230, 211, 163, 0.5); border-radius: 99px; padding: 4px 12px; margin-bottom: 14px; }
+      .x-hero h1 { font-size: clamp(30px, 8vw, 52px); line-height: 1.35; font-weight: 800; }
+      .x-hero p { margin-top: 10px; font-size: 15px; line-height: 1.9; color: rgba(255, 255, 255, 0.88); }
+      .x-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+      .x-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 22px; border-radius: 12px; font-weight: 700; font-size: 14px; text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: transform 0.15s, background 0.15s; }
+      .x-btn:active { transform: scale(0.97); }
+      .x-btn--gold { background: var(--x-gold); color: #fff; }
+      .x-btn--gold:hover { background: var(--x-gold-d); }
+      .x-btn--ghost { background: rgba(255, 255, 255, 0.12); color: #fff; border-color: rgba(255, 255, 255, 0.5); }
+      .x-btn--line { background: #fff; color: var(--x-ink); border-color: var(--x-line); }
+      .x-btn--dark { background: var(--x-ink); color: #fff; }
+      .x-btn--dark:hover { background: #000; }
+      @media (min-width: 820px) { .x-hero { margin: 18px auto 0; max-width: 1148px; min-height: 520px; } .x-hero__copy { padding: 48px; } }
+
+      /* trust */
+      .x-trust { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 16px; }
+      .x-trust div { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--x-line); border-radius: 14px; padding: 12px; font-size: 13px; font-weight: 500; line-height: 1.6; }
+      .x-trust svg { width: 30px; height: 30px; flex: none; padding: 6px; border-radius: 10px; background: var(--x-cream-2); stroke: var(--x-gold-d); fill: none; stroke-width: 1.7; }
+      @media (min-width: 820px) { .x-trust { grid-template-columns: repeat(4, 1fr); } }
+
+      /* sections */
+      .x-sec { margin-top: 40px; }
+      .x-sec__head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+      .x-sec__head h2 { font-size: 22px; font-weight: 800; line-height: 1.5; }
+      .x-sec__head h2::after { content: ""; display: block; width: 36px; height: 3px; border-radius: 2px; background: var(--x-gold); margin-top: 6px; }
+      .x-sec__head a { font-size: 13px; color: var(--x-gold-d); font-weight: 700; text-decoration: none; white-space: nowrap; }
+
+      /* categories */
+      .x-cats { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: -16px; padding-inline: 16px; }
+      .x-cats::-webkit-scrollbar { display: none; }
+      .x-cat { flex: none; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; gap: 8px; width: 84px; text-decoration: none; font-size: 12.5px; font-weight: 500; text-align: center; line-height: 1.5; }
+      .x-cat span { width: 68px; height: 68px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 30% 30%, #fff, var(--x-cream-2)); border: 1.5px solid var(--x-gold-l); font-size: 26px; transition: border-color 0.2s; }
+      .x-cat:hover span { border-color: var(--x-gold); }
+
+      /* products */
+      .x-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      @media (min-width: 820px) { .x-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
+      .x-card { background: #fff; border: 1px solid var(--x-line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.2s; }
+      .x-card:hover { box-shadow: 0 10px 30px rgba(80, 60, 20, 0.1); transform: translateY(-2px); }
+      .x-card__img { position: relative; aspect-ratio: 4 / 5; background: var(--x-cream-2); margin: 0; }
+      .x-card__img img { width: 100%; height: 100%; object-fit: cover; }
+      .x-badge { position: absolute; top: 10px; right: 10px; background: rgba(255, 255, 255, 0.95); color: #2f7a43; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 99px; display: flex; align-items: center; gap: 5px; }
+      .x-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #34a853; }
+      .x-card__body { padding: 12px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+      .x-card h3 { font-size: 14px; font-weight: 700; line-height: 1.75; flex: 1; }
+      .x-price { font-size: 15px; font-weight: 800; }
+      .x-price small { font-size: 12px; font-weight: 500; color: var(--x-ink-2); }
+      .x-price--ask { color: var(--x-gold-d); font-size: 14px; }
+      .x-card .x-btn { width: 100%; min-height: 44px; padding: 0 10px; font-size: 13px; }
+
+      /* brands */
+      .x-brands { display: flex; flex-wrap: wrap; gap: 10px; }
+      .x-brands span { padding: 10px 18px; border-radius: 12px; background: #fff; border: 1px solid var(--x-line); font-family: var(--sans); font-weight: 600; font-size: 15px; letter-spacing: 0.3px; direction: ltr; }
+
+      /* wholesale */
+      .x-whole { position: relative; border-radius: 22px; overflow: hidden; color: #fff; padding: 40px 22px; min-height: 260px; display: flex; flex-direction: column; justify-content: center; }
+      .x-whole img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .x-whole::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to left, rgba(18, 14, 10, 0.88), rgba(18, 14, 10, 0.6)); }
+      .x-whole > *:not(img) { position: relative; z-index: 1; }
+      .x-whole h2 { font-size: clamp(24px, 6vw, 34px); font-weight: 800; line-height: 1.5; }
+      .x-whole p { margin-top: 8px; color: rgba(255, 255, 255, 0.85); line-height: 1.9; }
+      @media (min-width: 820px) { .x-whole { padding: 56px; } }
+
+      /* store */
+      .x-store { display: grid; gap: 16px; background: #fff; border: 1px solid var(--x-line); border-radius: 22px; overflow: hidden; }
+      .x-store img { width: 100%; height: 100%; min-height: 260px; max-height: 420px; object-fit: cover; }
+      .x-store__info { padding: 4px 20px 24px; display: flex; flex-direction: column; gap: 14px; }
+      .x-store__info h2 { font-size: 22px; font-weight: 800; }
+      .x-line { display: flex; gap: 12px; align-items: flex-start; line-height: 1.8; font-size: 14px; }
+      .x-line svg { width: 22px; height: 22px; flex: none; stroke: var(--x-gold-d); fill: none; stroke-width: 1.7; margin-top: 2px; }
+      .x-line a { text-decoration: none; font-weight: 700; }
+      .x-line b { display: block; font-size: 12px; color: var(--x-ink-2); font-weight: 500; }
+      @media (min-width: 820px) { .x-store { grid-template-columns: 1fr 1fr; align-items: center; } .x-store__info { padding: 32px; } }
+
+      /* footer */
+      .x-foot { margin-top: 48px; background: var(--x-ink); color: rgba(255, 255, 255, 0.82); padding: 36px 0 20px; }
+      .x-foot__grid { display: grid; gap: 28px; }
+      .x-foot .x-logo { color: #fff; }
+      .x-foot .x-logo small { color: rgba(255, 255, 255, 0.6); }
+      .x-foot p { line-height: 1.9; font-size: 13px; margin-top: 10px; }
+      .x-foot h4 { margin: 0 0 10px; color: var(--x-gold-l); font-size: 14px; }
+      .x-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+      .x-foot ul a { display: inline-flex; align-items: center; min-height: 36px; text-decoration: none; font-size: 14px; }
+      .x-foot ul a:hover { color: var(--x-gold-l); }
+      .x-seals { display: flex; gap: 10px; }
+      .x-seal { width: 92px; height: 104px; border-radius: 12px; border: 1px dashed rgba(255, 255, 255, 0.35); display: grid; place-items: center; text-align: center; font-size: 12px; color: rgba(255, 255, 255, 0.6); line-height: 1.7; }
+      .x-seal svg { width: 30px; height: 30px; stroke: var(--x-gold-l); fill: none; stroke-width: 1.5; margin: 0 auto 4px; }
+      .x-foot__base { margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.12); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 12px; color: rgba(255, 255, 255, 0.55); }
+      .x-foot__base a { color: var(--x-gold-l); text-decoration: none; }
+      @media (min-width: 820px) { .x-foot__grid { grid-template-columns: 1.4fr 1fr 1fr; } }
+
+      .x-toast { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 30px); background: var(--x-ink); color: #fff; padding: 12px 20px; border-radius: 12px; font-size: 14px; opacity: 0; pointer-events: none; transition: opacity 0.25s, transform 0.25s; z-index: 100; white-space: nowrap; }
+      .x-toast.is-on { opacity: 1; transform: translate(-50%, 0); }
+      @media (prefers-reduced-motion: reduce) { .x-card, .x-toast, .x-count { transition: none; } }
+
+      /* contrast and tap-target fixes */
+      .x-header .x-gold { color: var(--x-gold-d); }
+      .x-logo { min-height: 44px; }
+      .x-logo small { font-size: 12px; }
+      .x-count { background: var(--x-gold-d); }
+      .x-btn--gold { background: var(--x-gold-d); }
+      .x-btn--gold:hover { background: #6f5419; }
+      .x-hero, .x-whole { background-color: #1e1813; }
+      .x-btn--ghost { background: rgba(0, 0, 0, 0.35); }
+      .x-sec__head a, .x-line a, .x-foot ul a, .x-foot__base a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
+      .x-line a { justify-content: flex-start; }
+      .x-line span { line-height: 1.6; }
+    </style>
+  </head>
+  <body>
+    <div class="page x-shop" id="top">
+      <header class="x-header">
+        <div class="x-wrap">
+          <div class="x-header__row">
+            <button class="x-iconbtn" id="menuBtn" aria-label="منو" aria-expanded="false" aria-controls="menu">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round" /></svg>
+            </button>
+            <a class="x-logo" href="#top">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.6 1.2 4.4 2.6.8-1.4 2.3-2.6 4.4-2.6 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z" /></svg>
+              <span>گالری <span class="x-gold">تی‌تی</span><small>پخش لوازم لوکس و دکوری منزل</small></span>
+            </a>
+            <label class="x-search x-search--top">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
+              <input type="search" placeholder="جستجو بین کریستال، ظروف، لوازم برقی…" aria-label="جستجو" />
+            </label>
+            <span class="x-spacer"></span>
+            <button class="x-iconbtn" aria-label="سبد خرید" id="cartBtn">
+              <svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 8z" /><path d="M9 8V6.5a3 3 0 0 1 6 0V8" /></svg>
+              <span class="x-count" id="cartCount" aria-live="polite">۰</span>
+            </button>
+          </div>
+          <label class="x-search x-search--mob">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
+            <input type="search" placeholder="جستجو بین کریستال، ظروف، لوازم برقی…" aria-label="جستجو" />
+          </label>
+        </div>
+        <nav class="x-menu" id="menu" aria-label="منوی اصلی">
+          <div class="x-wrap">
+            <a href="#cats">دسته‌بندی‌ها</a>
+            <a href="#new">تازه رسیده‌ها</a>
+            <a href="#brands">برندها</a>
+            <a href="#wholesale">خرید عمده</a>
+            <a href="#store">فروشگاه حضوری</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="x-hero">
+          <img src="hero.jpg" alt="قفسه‌های فروشگاه گالری تی‌تی پر از لوازم دکوری" />
+          <div class="x-hero__copy">
+            <span class="x-hero__tag">عمده و تک · خرید حضوری و آنلاین</span>
+            <h1>بمب زیبایی خانه شما میشیم</h1>
+            <p>لوازم لوکس، دکوری و برقی اصل — فروش تک و عمده</p>
+            <div class="x-btns">
+              <a class="x-btn x-btn--gold" href="#new">مشاهده محصولات</a>
+              <a class="x-btn x-btn--ghost" href="#wholesale">خرید عمده</a>
+            </div>
+          </div>
+        </section>
+
+        <div class="x-wrap">
+          <div class="x-trust">
+            <div><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3z" /><path d="m8.8 12 2.2 2.2 4.2-4.4" /></svg>ضمانت اصالت کالا</div>
+            <div><svg viewBox="0 0 24 24"><path d="M3 6h11v10H3zM14 9h4l3 3.5V16h-7" /><circle cx="7" cy="17.5" r="1.8" /><circle cx="17" cy="17.5" r="1.8" /></svg>ارسال به سراسر کشور</div>
+            <div><svg viewBox="0 0 24 24"><path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5z" /><path d="M4 8.5 12 13l8-4.5M12 13v7" /></svg>فروش تک و عمده</div>
+            <div><svg viewBox="0 0 24 24"><path d="M4 10v10h16V10M3 10l1.5-6h15L21 10z" /><path d="M10 20v-5h4v5" /></svg>خرید حضوری و آنلاین</div>
+          </div>
+
+          <section class="x-sec" id="cats">
+            <div class="x-sec__head"><h2>دسته‌بندی‌ها</h2></div>
+            <div class="x-cats">
+              <a class="x-cat" href="#new"><span>💎</span>کریستال</a>
+              <a class="x-cat" href="#new"><span>🥂</span>بلورجات</a>
+              <a class="x-cat" href="#new"><span>🍳</span>وسایل آشپزخانه</a>
+              <a class="x-cat" href="#new"><span>🔌</span>لوازم برقی</a>
+              <a class="x-cat" href="#new"><span>🫖</span>کتری و قوری</a>
+              <a class="x-cat" href="#new"><span>🥣</span>پیرکس</a>
+              <a class="x-cat" href="#new"><span>☕</span>سرویس پذیرایی</a>
+              <a class="x-cat" href="#new"><span>🏺</span>ظروف برنجی</a>
+              <a class="x-cat" href="#new"><span>🍽️</span>سینی استیل</a>
+              <a class="x-cat" href="#new"><span>🧸</span>محصولات کودکان</a>
+              <a class="x-cat" href="#new"><span>🪵</span>چوب</a>
+              <a class="x-cat" href="#new"><span>🧹</span>زمین‌شوی و طی</a>
+            </div>
+          </section>
+
+          <section class="x-sec" id="new">
+            <div class="x-sec__head"><h2>تازه رسیده‌ها</h2><a href="#new">مشاهده همه ←</a></div>
+            <div class="x-grid">
+              <article class="x-card">
+                <figure class="x-card__img"><img src="p1.jpg" alt="ست فنجان قهوه‌خوری لبه طلایی" /><span class="x-badge">موجود</span></figure>
+                <div class="x-card__body">
+                  <h3>ست قهوه‌خوری چینی ترک ۱۲ پارچه</h3>
+                  <p class="x-price">۴٬۴۹۰٬۰۰۰ <small>تومان</small></p>
+                  <button class="x-btn x-btn--dark" data-add>افزودن به سبد</button>
+                </div>
+              </article>
+              <article class="x-card">
+                <figure class="x-card__img"><img src="p9.jpg" alt="جعبه خردکن کلیک در ویترین" /><span class="x-badge">موجود</span></figure>
+                <div class="x-card__body">
+                  <h3>خردکن همه‌کاره کلیک ژاپن با دو کاسه پیرکس</h3>
+                  <p class="x-price">۷٬۹۵۰٬۰۰۰ <small>تومان</small></p>
+                  <button class="x-btn x-btn--dark" data-add>افزودن به سبد</button>
+                </div>
+              </article>
+              <article class="x-card">
+                <figure class="x-card__img"><img src="p2.jpg" alt="جعبه‌های سرخ‌کن بدون روغن فیلیپس و بوش" /><span class="x-badge">موجود</span></figure>
+                <div class="x-card__body">
+                  <h3>سرخ‌کن بدون روغن فیلیپس / بوش ۶ لیتری</h3>
+                  <p class="x-price x-price--ask">استعلام قیمت</p>
+                  <button class="x-btn x-btn--line" data-ask>استعلام</button>
+                </div>
+              </article>
+              <article class="x-card">
+                <figure class="x-card__img"><img src="p8.jpg" alt="جعبه اسنک‌ساز بلک‌اند‌دکر" /><span class="x-badge">موجود</span></figure>
+                <div class="x-card__body">
+                  <h3>اسنک‌ساز بلک‌اند‌دکر مدل ۱۳۰ (ساندویچ، گریل، وافل)</h3>
+                  <p class="x-price x-price--ask">استعلام قیمت</p>
+                  <button class="x-btn x-btn--line" data-ask>استعلام</button>
+                </div>
+              </article>
+              <article class="x-card">
+                <figure class="x-card__img"><img src="p4.jpg" alt="سینی استیل با دسته‌های چوبی" /><span class="x-badge">موجود</span></figure>
+                <div class="x-card__body">
+                  <h3>سینی استیل گالری با دسته چوبی، ضدزنگ، ۳ سایز</h3>
+                  <p class="x-price x-price--ask">استعلام قیمت</p>
+                  <button class="x-btn x-btn--line" data-ask>استعلام</button>
+                </div>
+              </article>
+              <article class="x-card">
+                <figure class="x-card__img"><img src="p10.jpg" alt="جعبه‌های اتو بلک‌اند‌دکر و فیلیپس" /><span class="x-badge">موجود</span></figure>
+                <div class="x-card__body">
+                  <h3>اتو بخار فیلیپس اصل</h3>
+                  <p class="x-price x-price--ask">استعلام قیمت</p>
+                  <button class="x-btn x-btn--line" data-ask>استعلام</button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="x-sec" id="brands">
+            <div class="x-sec__head"><h2>برندهای اصل</h2></div>
+            <div class="x-brands">
+              <span>Philips</span><span>Bosch</span><span>Tefal</span><span>Black+Decker</span><span>AEG</span><span>Ninja</span><span>Feller</span>
+            </div>
+          </section>
+
+          <section class="x-sec x-whole" id="wholesale">
+            <img src="p7.jpg" alt="" />
+            <h2>خرید عمده برای فروشگاه‌ها</h2>
+            <p>لیست قیمت عمده رو یک‌جا ببینید و سفارش ثبت کنید</p>
+            <div class="x-btns"><button class="x-btn x-btn--gold" data-ask>درخواست لیست عمده</button></div>
+          </section>
+
+          <section class="x-sec x-store" id="store">
+            <img src="store.jpg" alt="ورودی فروشگاه گالری تی‌تی" />
+            <div class="x-store__info">
+              <h2>فروشگاه حضوری</h2>
+              <p class="x-line"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" /><circle cx="12" cy="10" r="2.3" /></svg><span><b>آدرس</b>خ ۲۴ متری، کوچه تهرانی، پلاک ۸</span></p>
+              <p class="x-line"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" /></svg><span><b>تلفن</b><a href="tel:55939749">۵۵۹۳۹۷۴۹</a> · <a href="tel:09102120082">۰۹۱۰۲۱۲۰۰۸۲</a></span></p>
+              <p class="x-line"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="0.8" /></svg><span><b>اینستاگرام</b><a href="https://instagram.com/gallery_titi_shop" target="_blank" rel="noopener" dir="ltr">@gallery_titi_shop</a></span></p>
+              <div class="x-btns"><a class="x-btn x-btn--dark" href="tel:09102120082">تماس با فروشگاه</a></div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="x-foot">
+        <div class="x-wrap">
+          <div class="x-foot__grid">
+            <div>
+              <a class="x-logo" href="#top">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.6 1.2 4.4 2.6.8-1.4 2.3-2.6 4.4-2.6 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z" /></svg>
+                <span>گالری <span class="x-gold">تی‌تی</span><small>پخش لوازم لوکس و دکوری منزل</small></span>
+              </a>
+              <p>بمب زیبایی خانه شما میشیم. فروش عمده و تک، خرید حضوری و آنلاین.</p>
+            </div>
+            <div>
+              <h4>دسترسی سریع</h4>
+              <ul>
+                <li><a href="#top">درباره ما</a></li>
+                <li><a href="#top">شرایط ارسال</a></li>
+                <li><a href="#top">پیگیری سفارش</a></li>
+                <li><a href="#store">تماس</a></li>
+              </ul>
+            </div>
+            </div>
+          </div>
+          <div class="x-foot__base">
+            <span>© گالری تی‌تی</span>
+            <span>نمونه طراحی‌شده توسط <a href="https://www.instagram.com/webrahim.ir/" target="_blank" rel="noopener">webrahim.ir</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="x-toast" id="toast" role="status"></div>
+    <script src="main.js"></script>
+    <script>
+      (function () {
+        var fa = function (n) { return String(n).replace(/\d/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹"[d]; }); };
+        var count = 0, el = document.getElementById("cartCount"), toast = document.getElementById("toast"), t;
+        function say(msg) {
+          toast.textContent = msg; toast.classList.add("is-on");
+          clearTimeout(t); t = setTimeout(function () { toast.classList.remove("is-on"); }, 1800);
+        }
+        document.querySelectorAll("[data-add]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            count++; el.textContent = fa(count);
+            el.classList.add("is-bump"); setTimeout(function () { el.classList.remove("is-bump"); }, 200);
+            say("به سبد خرید اضافه شد (نسخه نمایشی)");
+          });
+        });
+        document.querySelectorAll("[data-ask]").forEach(function (b) {
+          b.addEventListener("click", function () { say("درخواست ثبت شد (نسخه نمایشی)"); });
+        });
+        document.getElementById("cartBtn").addEventListener("click", function () {
+          say(count ? "سبد شما: " + fa(count) + " کالا (نسخه نمایشی)" : "سبد خرید خالی است");
+        });
+        var mb = document.getElementById("menuBtn"), menu = document.getElementById("menu");
+        mb.addEventListener("click", function () {
+          var open = menu.classList.toggle("is-open"); mb.setAttribute("aria-expanded", open);
+        });
+        menu.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", function () { menu.classList.remove("is-open"); mb.setAttribute("aria-expanded", "false"); });
+        });
+      })();
+    </script>
+  </body>
+</html>
